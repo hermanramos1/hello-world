@@ -1,0 +1,14 @@
+name: $(date:yyyymmdd)$(rev:.rr) 
+
+trigger:
+  - master 
+
+stages:
+  - stage: compile 
+    jobs:
+      - job: aspnet 
+      - pool: 
+          vmImage: ubuntu-1804
+        steps:
+          - script: |
+              dotnet build 3_devops/Devops.sln 
