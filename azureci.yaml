@@ -7,7 +7,7 @@ stages:
   - stage: compile 
     jobs:
       - job: aspnet 
-      - pool: 
+        pool: 
           vmImage: ubuntu-18.04
         steps:
           - script: |
