@@ -1,0 +1,28 @@
+2019-11-01 12:16:47.363 -05:00 [INF] Play Method
+2019-11-01 12:16:47.480 -05:00 [DBG] Untitled 00:00:00
+BitRate: 24
+2019-11-01 12:16:47.484 -05:00 [DBG] Untitled 00:00:00
+BitRate: 256
+2019-11-01 12:16:47.484 -05:00 [DBG] Untitiled 00:00:00
+FrameRate: 24
+2019-11-01 12:16:47.485 -05:00 [DBG] Untitled 00:00:00
+FrameRate: 0
+2019-11-01 12:16:47.485 -05:00 [WRN] end of Main Method
+2019-11-01 12:18:09.896 -05:00 [INF] Play Method
+2019-11-01 12:18:10.062 -05:00 [DBG] {"BitRate":24,"Title":"Untitled","Duration":"00:00:00","$type":"Book"}
+2019-11-01 12:18:10.081 -05:00 [DBG] {"BitRate":256,"Title":"Untitled","Duration":"00:00:00","$type":"Song"}
+2019-11-01 12:18:10.081 -05:00 [DBG] {"FrameRate":24,"Title":"Untitiled","Duration":"00:00:00","$type":"Movie"}
+2019-11-01 12:18:10.109 -05:00 [DBG] {"FrameRate":0,"Title":"Untitled","Duration":"00:00:00","$type":"Photo"}
+2019-11-01 12:18:10.112 -05:00 [WRN] end of Main Method
+2019-11-01 12:22:55.899 -05:00 [INF] Play Method
+2019-11-01 12:22:56.103 -05:00 [DBG] Untitled
+2019-11-01 12:22:56.106 -05:00 [DBG] Untitled
+2019-11-01 12:22:56.106 -05:00 [DBG] Untitiled
+2019-11-01 12:22:56.107 -05:00 [DBG] Untitled
+2019-11-01 12:22:56.107 -05:00 [WRN] end of Main Method
+2019-11-01 14:49:11.846 -05:00 [INF] Play Method
+2019-11-01 14:49:11.973 -05:00 [DBG] Untitled
+2019-11-01 14:49:11.975 -05:00 [DBG] Untitled
+2019-11-01 14:49:11.975 -05:00 [DBG] Untitiled
+2019-11-01 14:49:11.976 -05:00 [DBG] Untitled
+2019-11-01 14:49:11.976 -05:00 [WRN] end of Main Method
