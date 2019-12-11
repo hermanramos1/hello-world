@@ -32,6 +32,7 @@ stages:
             inputs:
               packageType: 'sdk'
               version: '3.1.100'
+          - script: dotnet tool install --global dotnet-sonarscanner
           - script: |
               dotnet sonarscanner begin \
               /d:sonar-login=$SONAR_TOKEN \
