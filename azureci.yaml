@@ -37,7 +37,7 @@ stages:
               packageType: 'sdk'
               version: '3.1.100'
           - script: |
-              dotnet sonarscanner begin /k:devops-herman /d:sonar-login=$(SONAR_TOKEN) /o:hermanramos1
+              dotnet sonarscanner begin /k:devops-herman /d:sonar-login=$(SONAR_TOKEN) /d:sonar.host.url=https://sonarcloud.io /o:hermanramos1
               dotnet build 3_devops/Devops.sln
               dotnet test 3_devops/Devops.sln
               dotnet sonarscanner end /d:sonar.login=$SONAR_TOKEN
