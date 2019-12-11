@@ -1,6 +1,10 @@
+#coverlet
+TestResults/
+
 # dotnet 
 **/bin/
 **/obj/
 
 # vagrant 
 **/.vagrant/
+
