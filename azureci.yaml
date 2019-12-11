@@ -1,20 +1,20 @@
-name: $(date:yyyyMMdd)$(rev:.rr) 
+name: $(date:yyyyMMdd)$(rev:.rr)
 
 trigger:
-  - master 
+  - master
 
 stages:
-  - stage: compile 
+  - stage: compile
     jobs:
       - job: aspnet_build
-        pool: 
+        pool:
           vmImage: ubuntu-18.04
         steps:
-          - script: dotnet build 3_devops/Devops.sln 
+          - script: dotnet build 3_devops/Devops.sln
   - stage: test
     jobs:
-      - job: aspnet_test 
-        pool: 
+      - job: aspnet_test
+        pool:
           vmImage: ubuntu-18.04
         steps:
           - task: DotNetCoreCLI@2
@@ -23,34 +23,34 @@ stages:
               projects: 3_devops/Devops.sln
               arguments: '--collect:"XPlat Code Coverage"'
           - task: PublishCodeCoverageResults@2
-            inputs: 
+            inputs:
               codeCoverageTool: cobertura
               summaryFileLocation: '**/coverage.cobertura.xml'
-  - stage: analyze 
-    jobs: 
-      - job: 
-        pool: 
-          vmImage: ubuntu-18.04 
+  - stage: analyze
+    jobs:
+      - job:
+        pool:
+          vmImage: ubuntu-18.04
         steps:
-          - script: dotnet tool install --global dotnet-sonarscanner 
+          - script: dotnet tool install --global dotnet-sonarscanner
           - script: |
               dotnet sonarscanner begin /k:devops-herman /d:sonar-login=$(SONAR_TOKEN) /o:hermanramos1
-              dotnet build 3_devops/Devops.sln 
-              dotnet test 3_devops/Devops.sln 
+              dotnet build 3_devops/Devops.sln
+              dotnet test 3_devops/Devops.sln
               dotnet sonarscanner end /d:sonar.login=$SONAR_TOKEN
             env:
               SONAR_TOKEN: $(SONAR_LOGIN)
   - stage: pack
     jobs:
-      - job: 
-        pool: 
+      - job:
+        pool:
           vmImage: ubuntu-18.04
         steps:
           - script: docker image build -f 3_devops/dockerfile -t hermanramos/devops:$BUILD_NAME
             env:
               BUILD_NAME: $(Build.DefinitionName)
           - script: docker login --username $DOCKER_USER --password $DOCKER_TOKEN
-            env: 
+            env:
               DOCKER_TOKEN: $(docker.token)
               DOCKER_USER: $(docker.user)
           - script: docker image push hermanramos/devops:$BUILD_NAME
